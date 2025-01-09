@@ -6,10 +6,10 @@ dotenv.config();
 
 //payment gateway
 var gateway = new braintree.BraintreeGateway({
-  environment: braintree.Environment.Sandbox,
-  merchantId: process.env.BRAINTREE_MERCHANT_ID,
-  publicKey: process.env.BRAINTREE_PUBLIC_KEY,
-  privateKey: process.env.BRAINTREE_PRIVATE_KEY,
+  environment:  braintree.Environment.Sandbox,
+  merchantId:   'wjk3yqt7392rvk9m',
+  publicKey:    'sy6wdk4x8mz3thxn',
+  privateKey:   '6deb133ec12b6ee2796151e4ab04dfb8'
 });
 
 //create package

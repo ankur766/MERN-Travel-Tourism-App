@@ -14,16 +14,19 @@ dotenv.config();
 
 const __dirname = path.resolve();
 
+const mongoUri = "mongodb+srv://sandyankurkumar:1234@cluster0.abhef.mongodb.net/travel-tourism-app?retryWrites=true&w=majority";
 mongoose
-  .connect(process.env.MONGO_URL)
+  .connect(mongoUri)
   .then(() => {
     console.log("MongoDB Connected");
   })
-  .catch((err) => console.log(err));
+  .catch((err) => console.log("error come -----"+err));
 
 app.use(
   cors({
-    origin: process.env.SERVER_URL,
+    origin: "*", // Allow all origins
+    methods: "GET,HEAD,PUT,PATCH,POST,DELETE", // Optional: Specify allowed HTTP methods
+    credentials: true, // Enable cookies from client
   })
 );
 app.use(express.json());
